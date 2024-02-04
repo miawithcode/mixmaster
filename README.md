@@ -19,7 +19,7 @@ SPA 是单页面应用程序（Single-Page Application）的缩写，是一种�
 npm i react-router-dom
 ```
 
-## Basic Router
+### Basic Router
 
 ```jsx
 // App.jsx
@@ -45,3 +45,31 @@ const App = () => {
 };
 export default App;
 ```
+
+### Setup Pages
+
+> pages are components
+1. create src/pages
+2. create About, Cocktail, Error, HomeLayout, Landing, Newsletter, index.js
+3. export from `index.js`
+    ```js
+    // pages/index.js
+
+    export { default as Landing } from './Landing';
+    export { default as About } from './About';
+    export { default as Cocktail } from './Cocktail';
+    export { default as Newsletter } from './Newsletter';
+    export { default as HomeLayout } from './HomeLayout';
+    export { default as Error } from './Error';
+    ```
+4. import in `App.jsx`
+    ```jsx
+    import {
+      HomeLayout,
+      About,
+      Landing,
+      Error,
+      Newsletter,
+      Cocktail,
+    } from './pages';
+    ```
