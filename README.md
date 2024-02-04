@@ -110,3 +110,56 @@ export default About;
 ```
 
 ### Nested Pages
+
+应用场景：每个页面都需要 Navbar 和 Footer
+
+```jsx
+// App.jsx
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />,
+    children: [
+      {
+        path: 'landing',
+        element: <Landing />,
+      },
+      {
+        path: 'cocktail',
+        element: <Cocktail />,
+      },
+      {
+        path: 'newsletter',
+        element: <Newsletter />,
+      },
+      {
+        path: 'about',
+        element: <About />,
+      },
+    ],
+  },
+]);
+```
+
+```jsx
+// HomeLayout.jsx
+
+import { Link, Outlet } from 'react-router-dom';
+const HomeLayout = () => {
+  return (
+    <div>
+      <nav>navbar</nav>
+      <Outlet />
+    </div>
+  );
+};
+export default HomeLayout;
+```
+
+```jsx
+{
+  index:true
+  element: <Landing />,
+}
+```
