@@ -73,3 +73,40 @@ export default App;
       Cocktail,
     } from './pages';
     ```
+
+### Link Component
+
+> We are not going back to the server to request a resource. All the routing effectively is happening on the frontend
+
+```jsx
+// HomeLayout.jsx
+
+import { Link } from 'react-router-dom';
+const HomeLayout = () => {
+  return (
+    <div>
+      <h1>HomeLayout</h1>
+      <Link to='/about'>About</Link>
+    </div>
+  );
+};
+export default HomeLayout;
+```
+
+```jsx
+// About.jsx
+
+import { Link } from 'react-router-dom';
+
+const About = () => {
+  return (
+    <div>
+      <h1>About</h1>
+      <Link to='/'>Back Home</Link>
+    </div>
+  );
+};
+export default About;
+```
+
+### Nested Pages
