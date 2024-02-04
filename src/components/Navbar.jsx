@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import Wrapper from '../assets/wrappers/Navbar';
 
 const Navbar = () => {
   return (
     <Wrapper>
       <div className="nav-center">
-        <h4>MixMaster</h4>
+        <h4 className='logo'>MixMaster</h4>
         <div className="nav-links">
           <NavLink to="/" className="nav-link">
             Home
@@ -21,9 +21,4 @@ const Navbar = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.nav`
-  background: #cbd5e1;
-`;
-
 export default Navbar;

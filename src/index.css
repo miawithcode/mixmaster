@@ -1,0 +1,28 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #81689D;
+  --secondary: #474F7A;
+  --pink: #FFD0EC;
+  --dark: #1F2544;
+  --white: #f8fafc;
+  --black: #121212;
+
+  --view-width: 90vw;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+}
+
+body {
+  background: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
