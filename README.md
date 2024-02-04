@@ -163,3 +163,56 @@ export default HomeLayout;
   element: <Landing />,
 }
 ```
+
+## Styled Components
+
+> CSS in JavaScript, no name collisions
+
+- [Styled Components Docs](https://styled-components.com/)
+- [Styled Components Course](https://www.udemy.com/course/styled-components-tutorial-and-project-course/?referralCode=9DABB172FCB2625B663F)
+
+### Install
+
+```sh
+npm install styled-components
+```
+
+### Setup
+
+```jsx
+import styled from 'styled-components';
+
+const El = styled.el`
+  // styles go here
+`;
+```
+
+```jsx
+import styled from 'styled-components';
+const StyledBtn = styled.button`
+  background: red;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+`;
+```
+
+### Alternative Setup
+
+style entire react component
+
+```jsx
+const Wrapper = styled.el``;
+
+const Component = () => {
+  return (
+    <Wrapper>
+      <h1> Component</h1>
+    </Wrapper>
+  );
+};
+```
+
+### VS Code Extension
+
+- vscode-styled-components

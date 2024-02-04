@@ -1,9 +1,18 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyleBtn = styled.button`
+  background: black;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+`;
 
 const Navbar = () => {
   return (
     <nav>
       <div className="nav-center">
+        <StyleBtn>Button</StyleBtn>
         <h4>MixMaster</h4>
         <div className="nav-links">
           <NavLink to="/" className="nav-link">
@@ -19,5 +28,5 @@ const Navbar = () => {
       </div>
     </nav>
   );
-}
-export default Navbar
+};
+export default Navbar;
