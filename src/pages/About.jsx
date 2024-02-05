@@ -1,4 +1,4 @@
-import Wrapper from '../assets/wrappers/About';
+import Wrapper from '../assets/wrappers/AboutPage';
 
 const About = () => {
   return (
