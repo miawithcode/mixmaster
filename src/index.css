@@ -29,6 +29,12 @@ a {
   text-decoration: none;
 }
 
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .page {
   width: var(--view-width);
   max-width: var(--max-width);
