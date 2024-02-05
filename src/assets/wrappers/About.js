@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  padding: 2rem;
   h3 {
     font-size: 1.5rem;
     text-align: center;
