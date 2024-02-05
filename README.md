@@ -164,6 +164,39 @@ export default HomeLayout;
 }
 ```
 
+### Global Context
+
+```jsx
+// HomeLayout.jsx
+
+import { Outlet, useNavigation } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+
+const HomeLayout = () => {
+  const value = 'some value';
+  return (
+    <>
+      <Navbar />
+      <section className='page'>
+        <Outlet context={{ value }} />
+      </section>
+    </>
+  );
+};
+export default HomeLayout;
+```
+
+```jsx
+// CocktailCard.jsx
+import { useOutletContext } from 'react-router-dom';
+
+const CocktailCard = ({ image, name, id, info, glass }) => {
+  const data = useOutletContext();
+  console.log(data);
+  // 其他代码
+}
+```
+
 ## Styled Components
 
 > CSS in JavaScript, no name collisions
