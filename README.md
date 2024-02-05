@@ -336,6 +336,8 @@ TheCocktialDB 提供 a bunch of cocktail。
 
 - Search cocktail by name - `www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
 - Lookup full cocktail details by id - `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`
+- Ingredient Thumbnails - `www.thecocktaildb.com/images/ingredients/gin-Medium.png`
+- Search ingredient by name - `www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka`
 
 ### Landing - Fetch Drinks
 
@@ -365,3 +367,29 @@ export default Landing;
 
 - empty search term returns some default drinks
 - if search term yields not drinks drinks:null
+
+### Ingredients
+
+筛选出有效的 Ingredients
+
+```jsx
+// Cocktail.jsx
+
+const validIngredients = Object.keys(singleDrink)
+  .filter(
+    (key) => key.startsWith('strIngredient') && singleDrink[key] !== null
+  )
+  .map((key) => singleDrink[key]);
+```
+
+添加逗号
+```jsx
+{validIngredients.map((item, index) => {
+  return (
+    <span className="ing" key={item}>
+      {item}
+      {index < validIngredients.length - 1 ? ', ' : ''}
+    </span>
+  );
+})}
+```

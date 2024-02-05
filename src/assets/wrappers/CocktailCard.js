@@ -13,6 +13,9 @@ const Wrapper = styled.article`
   .card:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
+  .card:hover h4 {
+    color: var(--primary);
+  }
   img {
     height: 15rem;
     border-top-right-radius: 8px;
