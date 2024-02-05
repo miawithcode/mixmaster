@@ -46,17 +46,17 @@ const Cocktail = () => {
       </header>
       <div className="drink">
         <img src={image} alt={name} className="img" />
-        <div className="dirnk-info">
+        <div className="drink-info">
           <p>
-            <span className="drink-data">name: </span>
+            <span className="drink-data">name :</span>
             {name}
           </p>
           <p>
-            <span className="drink-data">category: </span>
+            <span className="drink-data">category :</span>
             {category}
           </p>
           <p>
-            <span className="drink-data">ingredients: </span>
+            <span className="drink-data">ingredients :</span>
             {validIngredients.map((item, index) => {
               return (
                 <span className="ing" key={item}>
@@ -67,15 +67,15 @@ const Cocktail = () => {
             })}
           </p>
           <p>
-            <span className="drink-data">info: </span>
+            <span className="drink-data">info :</span>
             {info}
           </p>
           <p>
-            <span className="drink-data">glass: </span>
+            <span className="drink-data">glass :</span>
             {glass}
           </p>
           <p>
-            <span className="drink-data">instructions: </span>
+            <span className="drink-data">instructions :</span>
             {instructions}
           </p>
         </div>
