@@ -216,3 +216,81 @@ const Component = () => {
 ### VS Code Extension
 
 - vscode-styled-components
+
+## Fetch Data
+
+### useEffect Approach
+
+useEffect 在 initial render 后运行，也就是先加载网页，在 initial render 后再 fetch 数据。但是在 React Router 中有 loader 函数在 render 之前给 route 提供数据，相当于 pre-fetching，在加载页面前就 fetch 到数据。
+
+```jsx
+// Landing.jsx
+
+const fetchSomething = async () => {
+  try {
+    const response = await axios.get('/someUrl');
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+useEffect(() => {
+  fetchSomething();
+}, []);
+```
+
+### Loader
+> Each route can define a "loader" function to provide data to the route element before it renders.
+
+loader 必须返回什么，（even `null`）,否则会报错。
+
+loader 不是 hook，当 work with React Query 的时候要尤其记住这一点。
+
+```jsx
+// Landing.jsx
+
+import { useLoaderData } from 'react-router-dom';
+
+export const loader = async () => {
+  return 'something';
+};
+
+const Landing = () => {
+  const data = useLoaderData();
+  console.log(data);
+  return <h1>Landing</h1>;
+};
+export default Landing;
+```
+
+```jsx
+// App.jsx
+
+import { loader as landingLoader } from './pages/Landing.jsx';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />,
+    errorElement:<Error/>
+    children: [
+      {
+        index: true,
+        loader: landingLoader,
+        element: <Landing />,
+      },
+      // alternative approach
+      {
+        index: true,
+        loader: () => {
+          // do stuff here
+        },
+        element: <Landing />,
+
+      },
+      // rest of the routes
+    ],
+  },
+]);
+```
