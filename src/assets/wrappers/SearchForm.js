@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .form-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     margin-bottom: 4rem;
     height: 3rem;
   }
