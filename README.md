@@ -1,5 +1,10 @@
 <h1> MixMaster </h1>
 
+<div align="center">
+  <img src="./public/screenshot.png" alt="demo screenshot">
+  <a href="https://mixmaster-pi.vercel.app/">Demo</a>
+</div>
+
 <h2> Table of Content </h2>
 
 - [SPA](#spa)
@@ -22,6 +27,7 @@
   - [TheCocktailDB](#thecocktaildb)
   - [Landing - Fetch Drinks](#landing---fetch-drinks)
   - [Ingredients](#ingredients)
+- [Redirects](#redirects)
 
 ## SPA
 
@@ -456,4 +462,14 @@ const validIngredients = Object.keys(singleDrink)
     </span>
   );
 })}
+```
+
+## Redirects
+
+> just for Netlify and React Router play nice together
+
+in public folder create `_redirects`
+
+```
+/* /index.html 200
 ```
