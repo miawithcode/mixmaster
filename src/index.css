@@ -15,8 +15,8 @@
   --white: #f8fafc;
   --black: #121212;
   --grey: #6b7280;
-  --border-gray: #f9fafb;
-  --bg-gray: #f3f4f6;
+  --border-gray: #f3f4f6;
+  --bg-gray: #f9fafb;
 
   --view-width: 90vw;
   --max-width: 1120px;
@@ -111,6 +111,10 @@ h5 {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   padding: 2rem 2.5rem;
   margin: 3rem auto;
+}
+
+.form-row {
+  margin-bottom: 1rem;
 }
 
 .form-label {

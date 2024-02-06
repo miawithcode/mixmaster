@@ -1,4 +1,27 @@
-# MixMaster
+<h1> MixMaster </h1>
+
+<h2> Table of Content </h2>
+
+- [SPA](#spa)
+- [React Router](#react-router)
+  - [Install](#install)
+  - [Basic Router](#basic-router)
+  - [Setup Pages](#setup-pages)
+  - [Link Component](#link-component)
+  - [Nested Pages](#nested-pages)
+  - [Global Context](#global-context)
+- [Form](#form)
+- [Styled Components](#styled-components)
+  - [Install](#install-1)
+  - [Setup](#setup)
+  - [Alternative Setup](#alternative-setup)
+  - [VS Code Extension](#vs-code-extension)
+- [Fetch Data](#fetch-data)
+  - [useEffect Approach](#useeffect-approach)
+  - [Loader](#loader)
+  - [TheCocktailDB](#thecocktaildb)
+  - [Landing - Fetch Drinks](#landing---fetch-drinks)
+  - [Ingredients](#ingredients)
 
 ## SPA
 
@@ -194,6 +217,27 @@ const CocktailCard = ({ image, name, id, info, glass }) => {
   const data = useOutletContext();
   console.log(data);
   // 其他代码
+}
+```
+
+## Form
+
+```jsx
+// Newsletter.jsx
+
+import { Form } from 'react-router-dom';
+
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  console.log(data);
+  return 'something';
+};
+
+const Newsletter = () => {
+  return (
+    <Form className='form' method='POST'>
+    .....)
 }
 ```
 

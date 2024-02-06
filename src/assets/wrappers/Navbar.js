@@ -8,7 +8,7 @@ const Wrapper = styled.nav`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
   }
   .logo {
     font-size: clamp(1.5rem, 3vw, 2rem);
