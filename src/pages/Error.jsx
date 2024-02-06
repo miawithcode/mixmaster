@@ -15,7 +15,7 @@ const Error = () => {
           <p>
             Sorry, the page you are looking for doesn't exist or has been moved.
           </p>
-          <button>
+          <button className='btn'>
             <Link to="/">Take me home</Link>
           </button>
         </div>

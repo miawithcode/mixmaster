@@ -25,18 +25,6 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
     color: var(--grey);
   }
-  button {
-    background: var(--secondary);
-    border-color: transparent;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    :hover {
-      background: var(--secondary-600);
-    }
-  }
   a {
     color: var(--white);
     font-size: 1rem;
