@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useLoaderData } from 'react-router-dom';
 import SearchForm from '../components/SearchForm';
 import CocktailList from '../components/CocktailList';
-import { useQuery } from '@tanstack/react-query';
+import { QueryClient, useQuery } from '@tanstack/react-query';
 
 const cocktailSearchUrl =
   'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
@@ -17,13 +17,15 @@ const searchCocktailsQuery = (searchTerm) => {
   };
 };
 
-export const loader = async ({ request }) => {
-  const url = new URL(request.url);
+export const loader =
+  (queryClient) =>
+  async ({ request }) => {
+    const url = new URL(request.url);
 
-  const searchTerm = url.searchParams.get('search') || '';
-
-  return { searchTerm };
-};
+    const searchTerm = url.searchParams.get('search') || '';
+    await queryClient.ensureQueryData(searchCocktailsQuery(searchTerm)); // ensureQueryData 检查数据是否缓存过
+    return { searchTerm };
+  };
 
 const Landing = () => {
   const { searchTerm } = useLoaderData();
