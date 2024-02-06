@@ -241,6 +241,26 @@ const Newsletter = () => {
 }
 ```
 
+```jsx
+// App.jsx
+
+import { action as newsletterAction } from './pages/Newsletter';
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: 'newsletter',
+        action: newsletterAction,
+        element: <Newsletter />,
+      },
+    ],
+  },
+]);
+```
+
 ## Styled Components
 
 > CSS in JavaScript, no name collisions
