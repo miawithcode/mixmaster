@@ -136,7 +136,7 @@ h5 {
 
 ::placeholder {
   font-family: inherit;
-  color: var(--grey-400);
+  color: var(--grey);
 }
 
 .page {
