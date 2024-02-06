@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useLoaderData } from 'react-router-dom';
-import SearchForm from '../components/SearchFrom';
+import SearchForm from '../components/SearchForm';
 import CocktailList from '../components/CocktailList';
 
 const cocktailSearchUrl =
